@@ -65,7 +65,7 @@ def process():
                 if current_proj:
                     all_projects.append(current_proj)
                 
-                proj_name_raw = str(row.iloc[4]).strip() if not pd.isna(row.iloc[4]) else "Unknown Project"
+                proj_name_raw = str(row.iloc[4]).strip() if not pd.isna(row.iloc[4]) else ""
                 role_raw = str(row.iloc[23]).strip() if not pd.isna(row.iloc[23]) else ""
                 
                 skills = []
@@ -78,31 +78,52 @@ def process():
 
                 current_proj = {
                     "date": None,
-                    "name": proj_name_raw.split("\n")[0],
-                    "description": "\n".join(proj_name_raw.split("\n")[1:]),
-                    "role": role_raw,
+                    "name": proj_name_raw.split("\n")[0] if proj_name_raw else "Unknown Project",
+                    "description": "\n".join(proj_name_raw.split("\n")[1:]) if proj_name_raw else "",
+                    "role": role_raw.split("\n")[0] if role_raw else "",
+                    "isLeader": False,
                     "skills": list(set(skills)),
-                    "type": "Professional"
+                    "type": "Professional",
+                    "full_text": proj_name_raw + " " + role_raw # For keyword detection
                 }
 
-            # If we don't have a date yet for the current project, look for it in this row
-            if current_proj and current_proj["date"] is None:
+            # If we don't have a record yet, skip until we find No.
+            if not current_proj: continue
+
+            # Extract date if missing
+            if current_proj["date"] is None:
                 date = parse_date(row.iloc[2])
                 if date:
                     current_proj["date"] = date
             
-            # Sometimes skills are also in subsequent rows? Let's check adding them if any
-            if current_proj:
-                cols = [27, 32, 41]
-                for col in cols:
-                    val = row.iloc[col]
-                    if not pd.isna(val) and str(val).strip() and "●" not in str(val):
-                        parts = str(val).replace("\n", "/").split("/")
-                        new_skills = [normalize_skill(p) for p in parts if p.strip()]
-                        current_proj["skills"] = list(set(current_proj["skills"] + new_skills))
+            # Aggregate skills and text from subsequent rows
+            row_name = str(row.iloc[4]).strip() if not pd.isna(row.iloc[4]) else ""
+            row_role = str(row.iloc[23]).strip() if not pd.isna(row.iloc[23]) else ""
+            if row_name or row_role:
+                current_proj["full_text"] += " " + row_name + " " + row_role
+                if not current_proj["description"] and row_name:
+                    current_proj["description"] = row_name
+                if not current_proj["role"] and row_role:
+                    current_proj["role"] = row_role
+
+            cols = [27, 32, 41]
+            for col in cols:
+                val = row.iloc[col]
+                if not pd.isna(val) and str(val).strip() and "●" not in str(val):
+                    parts = str(val).replace("\n", "/").split("/")
+                    new_skills = [normalize_skill(p) for p in parts if p.strip()]
+                    current_proj["skills"] = list(set(current_proj["skills"] + new_skills))
 
         if current_proj:
             all_projects.append(current_proj)
+
+    # Leadership keyword processing on aggregated text
+    leadership_keywords = ["リーダー", "Lead", "リーダ", "主導", "PL", "TL", "サブリーダー", "管理", "マネジメント"]
+    for p in all_projects:
+        if any(k.lower() in p["full_text"].lower() for k in leadership_keywords):
+            p["isLeader"] = True
+        # Clean up temporary field
+        del p["full_text"]
 
     # Filter out projects without dates (if any) or use current date for No.1 if it's really missing
     final_projects = []
