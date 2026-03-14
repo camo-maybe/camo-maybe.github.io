@@ -1,0 +1,50 @@
+{
+  "profile": {
+    "name": "",
+    "title": "",
+    "bio": "",
+    "links": {
+      "github": "https://github.com/camo-maybe"
+    }
+  },
+  "skills": [
+    { "name": "Python", "category": "Language" },
+    { "name": "TypeScript", "category": "Language" },
+    { "name": "AWS", "category": "Cloud" },
+    { "name": "Next.js", "category": "Framework" },
+    { "name": "Tailwind CSS", "category": "Framework" },
+    { "name": "Stable Diffusion", "category": "AI" },
+    { "name": "Gemini API", "category": "AI" },
+    { "name": "CloudFormation", "category": "IaC" },
+    { "name": "GitHub Actions", "category": "CI/CD" },
+    { "name": "Pydantic", "category": "Library" }
+  ],
+  "projects": [
+    {
+      "name": "AWS Stock Photo Automation",
+      "description": "Stable Diffusion WebUI と Gemini API を活用し、ストックフォトの生成・選別・販売準備を自動化するクラウドパイプライン。EventBridge によるスケジュール起動で GPU インスタンスを最小限のコストで運用。",
+      "highlights": [
+        "CloudFormation による完全 IaC 構築",
+        "GPU EC2 の日次スケジュール自動起動/停止",
+        "Next.js + Cognito による画像選別 Web UI",
+        "S3 ベースの 3 段階画像パイプライン (raw → approved → final)"
+      ],
+      "techStack": ["AWS", "Python", "Next.js", "Tailwind CSS", "CloudFormation", "GitHub Actions"],
+      "category": "Cloud / Automation",
+      "status": "In Development"
+    },
+    {
+      "name": "AI Driven Content Pipeline",
+      "description": "Gemini API と Stable Diffusion を組み合わせ、ブログ記事の執筆からストックフォトの生成・品質検証・メタデータ埋め込みまでを一気通貫で自動化するパイプライン。",
+      "highlights": [
+        "3 フェーズパイプライン (生成 → 検証 → 最終化)",
+        "IPTC/EXIF メタデータの自動埋め込み",
+        "Gemini API による AI 品質検証",
+        "ESRGAN アップスケーリング統合"
+      ],
+      "techStack": ["Python", "Gemini API", "Stable Diffusion", "Pydantic", "PyYAML"],
+      "category": "AI / Machine Learning",
+      "status": "Active"
+    }
+  ]
+}
