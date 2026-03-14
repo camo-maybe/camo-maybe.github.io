@@ -14,8 +14,17 @@ const experience = experienceData as WorkProject[];
 // Merge durations into skills
 const skillsWithDuration = data.skills.map(skill => ({
   ...skill,
-  months: (skillDurations as Record<string, number>)[skill.name]
+  months: (skillDurations as Record<string, number>)[skill.name] || 0
 }));
+
+// Group skills by category
+const categories = ["Language", "Framework", "Cloud", "AI", "IaC", "CI/CD", "Library"];
+const groupedSkills = categories.map(cat => ({
+  name: cat,
+  skills: skillsWithDuration
+    .filter(s => s.category === cat)
+    .sort((a, b) => (b.months || 0) - (a.months || 0))
+})).filter(g => g.skills.length > 0);
 
 export default function HomePage() {
   return (
@@ -25,13 +34,23 @@ export default function HomePage() {
 
       {/* Skills */}
       <section className="max-w-5xl mx-auto px-6 py-16">
-        <div className="flex items-center gap-3 mb-8">
+        <div className="flex items-center gap-3 mb-10">
           <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
           <h2 className="text-2xl font-bold text-white">Technical Skills</h2>
         </div>
-        <div className="flex flex-wrap gap-3">
-          {skillsWithDuration.map((skill) => (
-            <SkillBadge key={skill.name} skill={skill} />
+        
+        <div className="space-y-12">
+          {groupedSkills.map((group) => (
+            <div key={group.name} className="space-y-4">
+              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-widest ml-1">
+                {group.name}s
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {group.skills.map((skill) => (
+                  <SkillBadge key={skill.name} skill={skill} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>

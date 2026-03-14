@@ -1,18 +1,33 @@
 [
   {
+    "date": "2025/11",
+    "name": "コールセンター向けシステム開発",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "Python",
+      "OpenSearch",
+      "AWS",
+      "DynamoDB"
+    ],
+    "type": "Professional",
+    "endDate": "Present",
+    "duration": 4
+  },
+  {
     "date": "2025/09",
     "name": "基幹システムのホストリニューアル",
     "description": "",
     "role": "メンバー",
     "skills": [
-      "IIS",
+      "Python",
       "Django",
-      "-",
-      "Python"
+      "IIS",
+      "-"
     ],
     "type": "Professional",
-    "endDate": "Present",
-    "duration": 6
+    "endDate": "2025/11",
+    "duration": 2
   },
   {
     "date": "2025/03",
@@ -20,10 +35,10 @@
     "description": "",
     "role": "メンバー",
     "skills": [
+      "Python",
       "AWS EC2",
       "Raspberry Pi",
-      "-",
-      "Python"
+      "-"
     ],
     "type": "Professional",
     "endDate": "2025/09",
@@ -35,11 +50,11 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "AWS",
       "Pytest",
-      "AWS MySQL",
+      "Python",
       "FastAPI",
-      "Python"
+      "AWS",
+      "AWS MySQL"
     ],
     "type": "Professional",
     "endDate": "2025/03",
@@ -51,15 +66,15 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "C#",
-      "AWS",
+      ".NET 4.7.2",
+      "CSS",
+      "TypeScript",
       "Ionic",
       "Angular",
+      "C#",
       "HTML",
-      "AWS MySQL",
-      "TypeScript",
-      ".NET 4.7.2",
-      "CSS"
+      "AWS",
+      "AWS MySQL"
     ],
     "type": "Professional",
     "endDate": "2023/03",
@@ -71,9 +86,9 @@
     "description": "",
     "role": "メンバー",
     "skills": [
+      "PowerShell",
       "Java",
-      "VBA",
-      "PowerShell"
+      "VBA"
     ],
     "type": "Professional",
     "endDate": "2022/03",
@@ -85,13 +100,13 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "AWS",
+      "CSS",
       "Ionic",
-      "Angular",
-      "HTML",
-      "RDS(MySQL)",
       "TypeScript",
-      "CSS"
+      "Angular",
+      "RDS(MySQL)",
+      "HTML",
+      "AWS"
     ],
     "type": "Professional",
     "endDate": "2021/03",
@@ -105,8 +120,8 @@
     "skills": [
       "JavaScript",
       "Java",
-      "Spring",
-      "HTML"
+      "HTML",
+      "Spring"
     ],
     "type": "Professional",
     "endDate": "2021/01",
@@ -120,8 +135,8 @@
     "skills": [
       "JavaScript",
       "Java",
-      "Oracle 12cr2",
-      "HTML"
+      "HTML",
+      "Oracle 12cr2"
     ],
     "type": "Professional",
     "endDate": "2020/03",
@@ -133,11 +148,11 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "Oracle 12cr2",
       "JavaScript",
       "Java",
+      "DB2",
       "HTML",
-      "DB2"
+      "Oracle 12cr2"
     ],
     "type": "Professional",
     "endDate": "2019/12",
@@ -149,10 +164,10 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "C#",
+      "SQL Server 2016",
       ".NET 4.7",
-      "Windows Server 2016",
-      "SQL Server 2016"
+      "C#",
+      "Windows Server 2016"
     ],
     "type": "Professional",
     "endDate": "2019/11",
@@ -164,10 +179,10 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "C#",
-      ".NET 4.7",
       "Xamarin",
-      "Prism"
+      "Prism",
+      "C#",
+      ".NET 4.7"
     ],
     "type": "Professional",
     "endDate": "2019/03",
@@ -191,10 +206,10 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "C#",
-      ".NET 4.7",
+      "MongoDB",
       "Oracle 12c",
-      "MongoDB"
+      "C#",
+      ".NET 4.7"
     ],
     "type": "Professional",
     "endDate": "2017/12",
@@ -206,12 +221,12 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "C#",
       ".NET 4.5",
-      "WindowsForm",
       "UWP",
+      "WinRT API",
+      "WindowsForm",
       "SQLite",
-      "WinRT API"
+      "C#"
     ],
     "type": "Professional",
     "endDate": "2017/10",
@@ -223,12 +238,12 @@
     "description": "",
     "role": "メンバー",
     "skills": [
-      "SAStruts",
-      "Apache",
       "JavaScript",
-      "HTML",
+      "Apache",
+      "DB2",
       "Java",
-      "DB2"
+      "SAStruts",
+      "HTML"
     ],
     "type": "Professional",
     "endDate": "2016/05",
