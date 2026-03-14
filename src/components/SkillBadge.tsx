@@ -13,11 +13,27 @@ const categoryColors: Record<string, string> = {
 export default function SkillBadge({ skill }: { skill: SkillData }) {
   const colors = categoryColors[skill.category] || "from-gray-500/20 to-gray-500/20 border-gray-500/30 text-gray-300";
 
+  const formatDuration = (months?: number) => {
+    if (!months) return null;
+    if (months >= 12) {
+      const yrs = (months / 12).toFixed(1);
+      return `${yrs.endsWith('.0') ? yrs.slice(0, -2) : yrs} yrs`;
+    }
+    return `${months} mos`;
+  };
+
+  const durationStr = formatDuration(skill.months);
+
   return (
     <span
-      className={`inline-flex items-center px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r ${colors} border backdrop-blur-sm transition-all duration-300 hover:scale-105`}
+      className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r ${colors} border backdrop-blur-sm transition-all duration-300 hover:scale-105`}
     >
-      {skill.name}
+      <span>{skill.name}</span>
+      {durationStr && (
+        <span className="text-[10px] opacity-60 font-mono bg-white/10 px-1.5 py-0.5 rounded-lg">
+          {durationStr}
+        </span>
+      )}
     </span>
   );
 }

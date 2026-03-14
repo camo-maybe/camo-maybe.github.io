@@ -10,6 +10,7 @@ export interface ProjectData {
 export interface SkillData {
   name: string;
   category: string;
+  months?: number;
 }
 
 export interface ProfileData {

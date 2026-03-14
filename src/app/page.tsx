@@ -3,9 +3,16 @@ import ProjectCard from "../components/ProjectCard";
 import SkillBadge from "../components/SkillBadge";
 import Footer from "../components/Footer";
 import portfolioData from "../data/projects.json";
+import skillDurations from "../data/skills.json";
 import type { PortfolioData } from "../types";
 
 const data = portfolioData as PortfolioData;
+
+// Merge durations into skills
+const skillsWithDuration = data.skills.map(skill => ({
+  ...skill,
+  months: (skillDurations as Record<string, number>)[skill.name]
+}));
 
 export default function HomePage() {
   return (
@@ -20,7 +27,7 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold text-white">Skills</h2>
         </div>
         <div className="flex flex-wrap gap-3">
-          {data.skills.map((skill) => (
+          {skillsWithDuration.map((skill) => (
             <SkillBadge key={skill.name} skill={skill} />
           ))}
         </div>
