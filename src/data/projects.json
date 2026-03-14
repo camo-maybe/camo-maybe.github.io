@@ -10,14 +10,18 @@
   "skills": [
     { "name": "Python", "category": "Language" },
     { "name": "TypeScript", "category": "Language" },
+    { "name": "C#", "category": "Language" },
+    { "name": "Java", "category": "Language" },
     { "name": "AWS", "category": "Cloud" },
     { "name": "Next.js", "category": "Framework" },
+    { "name": "FastAPI", "category": "Framework" },
+    { "name": "Angular", "category": "Framework" },
+    { "name": "Spring", "category": "Framework" },
     { "name": "Tailwind CSS", "category": "Framework" },
     { "name": "Stable Diffusion", "category": "AI" },
     { "name": "Gemini API", "category": "AI" },
     { "name": "CloudFormation", "category": "IaC" },
-    { "name": "GitHub Actions", "category": "CI/CD" },
-    { "name": "Pydantic", "category": "Library" }
+    { "name": "GitHub Actions", "category": "CI/CD" }
   ],
   "projects": [
     {
