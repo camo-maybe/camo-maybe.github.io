@@ -1,0 +1,14 @@
+{
+  "methodology": {
+    "Agile": 86,
+    "Waterfall": 26
+  },
+  "vcs": {
+    "Git": 18,
+    "SVN": 22
+  },
+  "stack": {
+    "Frontend": 33,
+    "Backend": 85
+  }
+}

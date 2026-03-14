@@ -2,10 +2,12 @@ import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import SkillBadge from "../components/SkillBadge";
 import Timeline from "../components/Timeline";
+import StatsCharts from "../components/StatsCharts";
 import Footer from "../components/Footer";
 import portfolioData from "../data/projects.json";
 import skillDurations from "../data/skills.json";
 import experienceData from "../data/experience.json";
+import statsData from "../data/stats.json";
 import type { PortfolioData, WorkProject } from "../types";
 
 const data = portfolioData as PortfolioData;
@@ -53,6 +55,15 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Career Stats */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <div className="flex items-center gap-3 mb-10">
+          <div className="w-8 h-0.5 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full" />
+          <h2 className="text-2xl font-bold text-white">Career Statistics</h2>
+        </div>
+        <StatsCharts stats={statsData} />
       </section>
 
       {/* Experience (Career Timeline) */}

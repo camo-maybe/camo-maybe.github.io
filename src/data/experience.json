@@ -2,13 +2,13 @@
   {
     "date": "2025/11",
     "name": "コールセンター向けシステム開発",
-    "description": "コールセンター向けシステム開発",
+    "description": "",
     "role": "メンバー",
     "isLeader": true,
     "skills": [
-      "OpenSearch",
       "DynamoDB",
       "Python",
+      "OpenSearch",
       "AWS"
     ],
     "type": "Professional",
@@ -18,14 +18,14 @@
   {
     "date": "2025/09",
     "name": "基幹システムのホストリニューアル",
-    "description": "基幹システムのホストリニューアル",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
+      "IIS",
       "Django",
-      "-",
       "Python",
-      "IIS"
+      "-"
     ],
     "type": "Professional",
     "endDate": "2025/11",
@@ -34,12 +34,12 @@
   {
     "date": "2025/03",
     "name": "AIモデルの動作検証および性能評価",
-    "description": "AIモデルの動作検証および性能評価",
+    "description": "",
     "role": "メンバー",
     "isLeader": true,
     "skills": [
-      "AWS EC2",
       "-",
+      "AWS EC2",
       "Python",
       "Raspberry Pi"
     ],
@@ -50,15 +50,15 @@
   {
     "date": "2023/03",
     "name": "住居用錠前アプリ（WebAPI）",
-    "description": "住居用錠前アプリ（WebAPI）",
+    "description": "",
     "role": "メンバー",
-    "isLeader": false,
+    "isLeader": true,
     "skills": [
-      "AWS MySQL",
+      "FastAPI",
       "Pytest",
-      "AWS",
       "Python",
-      "FastAPI"
+      "AWS",
+      "AWS MySQL"
     ],
     "type": "Professional",
     "endDate": "2025/03",
@@ -67,19 +67,19 @@
   {
     "date": "2022/03",
     "name": "住居用顔認証アプリ（Webアプリ）",
-    "description": "住居用顔認証アプリ（Webアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      "HTML",
-      "AWS MySQL",
-      "Angular",
       "C#",
       "CSS",
       "Ionic",
+      ".NET 4.7.2",
       "AWS",
+      "HTML",
       "TypeScript",
-      ".NET 4.7.2"
+      "Angular",
+      "AWS MySQL"
     ],
     "type": "Professional",
     "endDate": "2023/03",
@@ -88,12 +88,12 @@
   {
     "date": "2021/03",
     "name": "ビル管理会社向け業務システム（Webアプリ）",
-    "description": "ビル管理会社向け業務システム（Webアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": true,
     "skills": [
-      "Java",
       "VBA",
+      "Java",
       "PowerShell"
     ],
     "type": "Professional",
@@ -103,17 +103,17 @@
   {
     "date": "2021/01",
     "name": "住居用顔認証アプリ（Webアプリ）",
-    "description": "住居用顔認証アプリ（Webアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      "HTML",
-      "Angular",
-      "Ionic",
       "CSS",
+      "Ionic",
+      "RDS(MySQL)",
       "AWS",
+      "HTML",
       "TypeScript",
-      "RDS(MySQL)"
+      "Angular"
     ],
     "type": "Professional",
     "endDate": "2021/03",
@@ -122,14 +122,14 @@
   {
     "date": "2020/03",
     "name": "グループ企業内システム（Webアプリ）",
-    "description": "グループ企業内システム（Webアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      "Java",
+      "JavaScript",
       "HTML",
-      "Spring",
-      "JavaScript"
+      "Java",
+      "Spring"
     ],
     "type": "Professional",
     "endDate": "2021/01",
@@ -138,14 +138,14 @@
   {
     "date": "2019/12",
     "name": "人事・就労システム（Webアプリ）",
-    "description": "人事・就労システム（Webアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      "Java",
+      "Oracle 12cr2",
       "HTML",
-      "JavaScript",
-      "Oracle 12cr2"
+      "Java",
+      "JavaScript"
     ],
     "type": "Professional",
     "endDate": "2020/03",
@@ -154,15 +154,15 @@
   {
     "date": "2019/11",
     "name": "人事・就労システム（Webアプリ）",
-    "description": "人事・就労システム（Webアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      "HTML",
-      "JavaScript",
-      "DB2",
       "Oracle 12cr2",
-      "Java"
+      "DB2",
+      "HTML",
+      "Java",
+      "JavaScript"
     ],
     "type": "Professional",
     "endDate": "2019/12",
@@ -171,13 +171,13 @@
   {
     "date": "2019/03",
     "name": "映像監視システム（Windowsアプリ＋WebAPI）",
-    "description": "映像監視システム（Windowsアプリ＋WebAPI）",
+    "description": "",
     "role": "メンバー",
     "isLeader": true,
     "skills": [
-      ".NET 4.7",
       "C#",
       "SQL Server 2016",
+      ".NET 4.7",
       "Windows Server 2016"
     ],
     "type": "Professional",
@@ -187,14 +187,14 @@
   {
     "date": "2018/04",
     "name": "農家向けAndroidアプリ（Xamarin＋WebAPI）",
-    "description": "農家向けAndroidアプリ（Xamarin＋WebAPI）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      ".NET 4.7",
       "C#",
+      "Xamarin",
       "Prism",
-      "Xamarin"
+      ".NET 4.7"
     ],
     "type": "Professional",
     "endDate": "2019/03",
@@ -203,9 +203,9 @@
   {
     "date": "2017/12",
     "name": "センサーチップ用アプリ（iOSネイティブ）",
-    "description": "センサーチップ用アプリ（iOSネイティブ）",
+    "description": "",
     "role": "メンバー",
-    "isLeader": false,
+    "isLeader": true,
     "skills": [
       "Swift"
     ],
@@ -216,13 +216,13 @@
   {
     "date": "2017/10",
     "name": "医療福祉システム（WebAPI）",
-    "description": "医療福祉システム（WebAPI）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      ".NET 4.7",
       "C#",
       "Oracle 12c",
+      ".NET 4.7",
       "MongoDB"
     ],
     "type": "Professional",
@@ -232,16 +232,16 @@
   {
     "date": "2016/05",
     "name": "設備点検用アプリ（UWP＋SOAP,Windowsアプリ）",
-    "description": "設備点検用アプリ（UWP＋SOAP,Windowsアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      ".NET 4.5",
-      "WindowsForm",
       "C#",
-      "SQLite",
       "UWP",
-      "WinRT API"
+      "WinRT API",
+      ".NET 4.5",
+      "SQLite",
+      "WindowsForm"
     ],
     "type": "Professional",
     "endDate": "2017/10",
@@ -250,16 +250,16 @@
   {
     "date": "2016/01",
     "name": "大手予備校向け業務システム（Webアプリ）",
-    "description": "大手予備校向け業務システム（Webアプリ）",
+    "description": "",
     "role": "メンバー",
     "isLeader": false,
     "skills": [
-      "HTML",
       "Apache",
       "SAStruts",
-      "JavaScript",
       "DB2",
-      "Java"
+      "HTML",
+      "Java",
+      "JavaScript"
     ],
     "type": "Professional",
     "endDate": "2016/05",
