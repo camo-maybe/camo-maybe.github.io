@@ -23,8 +23,20 @@ export interface ProfileData {
   };
 }
 
+export interface WorkProject {
+  date: string;
+  endDate: string;
+  name: string;
+  description: string;
+  role: string;
+  skills: string[];
+  duration: number;
+  type: string;
+}
+
 export interface PortfolioData {
   profile: ProfileData;
   skills: SkillData[];
   projects: ProjectData[];
+  experience?: WorkProject[];
 }

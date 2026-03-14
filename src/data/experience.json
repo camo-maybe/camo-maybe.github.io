@@ -1,0 +1,237 @@
+[
+  {
+    "date": "2025/09",
+    "name": "基幹システムのホストリニューアル",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "IIS",
+      "Django",
+      "-",
+      "Python"
+    ],
+    "type": "Professional",
+    "endDate": "Present",
+    "duration": 6
+  },
+  {
+    "date": "2025/03",
+    "name": "AIモデルの動作検証および性能評価",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "AWS EC2",
+      "Raspberry Pi",
+      "-",
+      "Python"
+    ],
+    "type": "Professional",
+    "endDate": "2025/09",
+    "duration": 6
+  },
+  {
+    "date": "2023/03",
+    "name": "住居用錠前アプリ（WebAPI）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "AWS",
+      "Pytest",
+      "AWS MySQL",
+      "FastAPI",
+      "Python"
+    ],
+    "type": "Professional",
+    "endDate": "2025/03",
+    "duration": 24
+  },
+  {
+    "date": "2022/03",
+    "name": "住居用顔認証アプリ（Webアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "C#",
+      "AWS",
+      "Ionic",
+      "Angular",
+      "HTML",
+      "AWS MySQL",
+      "TypeScript",
+      ".NET 4.7.2",
+      "CSS"
+    ],
+    "type": "Professional",
+    "endDate": "2023/03",
+    "duration": 12
+  },
+  {
+    "date": "2021/03",
+    "name": "ビル管理会社向け業務システム（Webアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "Java",
+      "VBA",
+      "PowerShell"
+    ],
+    "type": "Professional",
+    "endDate": "2022/03",
+    "duration": 12
+  },
+  {
+    "date": "2021/01",
+    "name": "住居用顔認証アプリ（Webアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "AWS",
+      "Ionic",
+      "Angular",
+      "HTML",
+      "RDS(MySQL)",
+      "TypeScript",
+      "CSS"
+    ],
+    "type": "Professional",
+    "endDate": "2021/03",
+    "duration": 2
+  },
+  {
+    "date": "2020/03",
+    "name": "グループ企業内システム（Webアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "JavaScript",
+      "Java",
+      "Spring",
+      "HTML"
+    ],
+    "type": "Professional",
+    "endDate": "2021/01",
+    "duration": 10
+  },
+  {
+    "date": "2019/12",
+    "name": "人事・就労システム（Webアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "JavaScript",
+      "Java",
+      "Oracle 12cr2",
+      "HTML"
+    ],
+    "type": "Professional",
+    "endDate": "2020/03",
+    "duration": 3
+  },
+  {
+    "date": "2019/11",
+    "name": "人事・就労システム（Webアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "Oracle 12cr2",
+      "JavaScript",
+      "Java",
+      "HTML",
+      "DB2"
+    ],
+    "type": "Professional",
+    "endDate": "2019/12",
+    "duration": 1
+  },
+  {
+    "date": "2019/03",
+    "name": "映像監視システム（Windowsアプリ＋WebAPI）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "C#",
+      ".NET 4.7",
+      "Windows Server 2016",
+      "SQL Server 2016"
+    ],
+    "type": "Professional",
+    "endDate": "2019/11",
+    "duration": 8
+  },
+  {
+    "date": "2018/04",
+    "name": "農家向けAndroidアプリ（Xamarin＋WebAPI）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "C#",
+      ".NET 4.7",
+      "Xamarin",
+      "Prism"
+    ],
+    "type": "Professional",
+    "endDate": "2019/03",
+    "duration": 11
+  },
+  {
+    "date": "2017/12",
+    "name": "センサーチップ用アプリ（iOSネイティブ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "Swift"
+    ],
+    "type": "Professional",
+    "endDate": "2018/04",
+    "duration": 4
+  },
+  {
+    "date": "2017/10",
+    "name": "医療福祉システム（WebAPI）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "C#",
+      ".NET 4.7",
+      "Oracle 12c",
+      "MongoDB"
+    ],
+    "type": "Professional",
+    "endDate": "2017/12",
+    "duration": 2
+  },
+  {
+    "date": "2016/05",
+    "name": "設備点検用アプリ（UWP＋SOAP,Windowsアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "C#",
+      ".NET 4.5",
+      "WindowsForm",
+      "UWP",
+      "SQLite",
+      "WinRT API"
+    ],
+    "type": "Professional",
+    "endDate": "2017/10",
+    "duration": 17
+  },
+  {
+    "date": "2016/01",
+    "name": "大手予備校向け業務システム（Webアプリ）",
+    "description": "",
+    "role": "メンバー",
+    "skills": [
+      "SAStruts",
+      "Apache",
+      "JavaScript",
+      "HTML",
+      "Java",
+      "DB2"
+    ],
+    "type": "Professional",
+    "endDate": "2016/05",
+    "duration": 4
+  }
+]
