@@ -41,7 +41,7 @@ def process():
         print(f"Error: {EXCEL_PATH} not found.")
         return
 
-    all_projects = []
+    all_raw_projects = []
     xl = pd.ExcelFile(EXCEL_PATH)
 
     for sheet in xl.sheet_names:
@@ -59,11 +59,10 @@ def process():
         current_proj = None
         for j in range(start_row + 1, len(df)):
             row = df.iloc[j]
-            
             no_val = row.iloc[1]
             if not pd.isna(no_val) and str(no_val).isdigit():
                 if current_proj:
-                    all_projects.append(current_proj)
+                    all_raw_projects.append(current_proj)
                 
                 proj_name_raw = str(row.iloc[4]).strip() if not pd.isna(row.iloc[4]) else ""
                 role_raw = str(row.iloc[23]).strip() if not pd.isna(row.iloc[23]) else ""
@@ -81,7 +80,6 @@ def process():
                     "name": proj_name_raw.split("\n")[0] if proj_name_raw else "Unknown Project",
                     "description": "\n".join(proj_name_raw.split("\n")[1:]) if proj_name_raw else "",
                     "role": role_raw.split("\n")[0] if role_raw else "",
-                    "isLeader": False,
                     "skills": list(set(skills)),
                     "type": "Professional",
                     "full_text": proj_name_raw + " " + role_raw + " " + str(row.values)
@@ -91,8 +89,7 @@ def process():
 
             if current_proj["date"] is None:
                 date = parse_date(row.iloc[2])
-                if date:
-                    current_proj["date"] = date
+                if date: current_proj["date"] = date
             
             row_name = str(row.iloc[4]).strip() if not pd.isna(row.iloc[4]) else ""
             row_role = str(row.iloc[23]).strip() if not pd.isna(row.iloc[23]) else ""
@@ -108,9 +105,9 @@ def process():
                     current_proj["skills"] = list(set(current_proj["skills"] + new_skills))
 
         if current_proj:
-            all_projects.append(current_proj)
+            all_raw_projects.append(current_proj)
 
-    final_projects = [p for p in all_projects if p["date"]]
+    final_projects = [p for p in all_raw_projects if p["date"]]
     final_projects.sort(key=lambda x: x["date"])
 
     skill_months = {}
@@ -134,35 +131,44 @@ def process():
         
         # Stats Aggregation
         txt = cur["full_text"].lower()
-        # Methodology
         if "アジャイル" in txt: stats["methodology"]["Agile"] += months
         elif "ウォーターフォール" in txt: stats["methodology"]["Waterfall"] += months
-        
-        # VCS
         if "git" in txt: stats["vcs"]["Git"] += months
         elif "svn" in txt or "subversion" in txt or "tortise" in txt: stats["vcs"]["SVN"] += months
         
-        # Stack
         is_fe = any(s in FE_SKILLS for s in cur["skills"]) or "フロント" in txt
         is_be = any(s in BE_SKILLS for s in cur["skills"]) or "バック" in txt
         if is_fe and is_be:
             stats["stack"]["Frontend"] += months // 2
             stats["stack"]["Backend"] += months // 2
-        elif is_fe:
-            stats["stack"]["Frontend"] += months
-        elif is_be:
-            stats["stack"]["Backend"] += months
+        elif is_fe: stats["stack"]["Frontend"] += months
+        elif is_be: stats["stack"]["Backend"] += months
 
-        # Leader Detection
-        leadership_keywords = ["リーダー", "Lead", "リーダ", "主導", "PL", "TL", "サブリーダー", "管理", "マネジメント"]
-        if any(k.lower() in txt for k in leadership_keywords):
-            cur["isLeader"] = True
+        # Role Refinement
+        official_role = cur["role"].replace("【役割】", "").split("\n")[0].strip()
+        if not official_role or official_role == "メンバー":
+             official_role = "メンバー"
+        
+        duties = []
+        if "リーダー業務" in txt or "リーダ業務" in txt or "進捗管理" in txt or "課題管理" in txt:
+            duties.append("リーダー型業務担当")
             
-        exp_item = cur.copy()
-        exp_item["date"] = start.strftime("%Y/%m")
-        exp_item["endDate"] = end.strftime("%Y/%m") if i+1 < len(final_projects) else "Present"
-        exp_item["duration"] = months
-        del exp_item["full_text"]
+        final_role = official_role
+        if "コールセンター" in cur["name"]:
+            final_role = "リーダー"
+        elif duties and official_role == "メンバー":
+            final_role = f"{official_role} ({' / '.join(duties)})"
+            
+        exp_item = {
+            "date": start.strftime("%Y/%m"),
+            "endDate": end.strftime("%Y/%m") if i+1 < len(final_projects) else "Present",
+            "name": cur["name"],
+            "description": cur["description"],
+            "role": final_role,
+            "skills": cur["skills"],
+            "duration": months,
+            "type": "Professional"
+        }
         experience_data.append(exp_item)
 
     # Save outputs
@@ -174,7 +180,7 @@ def process():
     with open(OUTPUT_STATS, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
     
-    print(f"Success! Saved skills, experience, and stats.")
+    print(f"Success! Saved {len(skill_months)} skills, {len(experience_data)} projects, and stats.")
 
 if __name__ == "__main__":
     process()

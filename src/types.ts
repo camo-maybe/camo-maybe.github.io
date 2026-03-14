@@ -29,7 +29,6 @@ export interface WorkProject {
   name: string;
   description: string;
   role: string;
-  isLeader?: boolean;
   skills: string[];
   duration: number;
   type: string;
